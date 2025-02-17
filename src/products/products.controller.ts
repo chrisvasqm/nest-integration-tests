@@ -6,12 +6,12 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
-  addProduct(@Body('name') name: string, @Body('price') price: number): any {
+  create(@Body('name') name: string, @Body('price') price: number) {
     return this.productsService.insert(name, price);
   }
 
   @Get()
-  getAllProducts() {
+  getAll() {
     return this.productsService.getAll();
   }
 }
