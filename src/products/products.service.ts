@@ -3,9 +3,6 @@ import { Product } from './product.model';
 
 @Injectable()
 export class ProductsService {
-  getProducts() {
-    throw new Error('Method not implemented.');
-  }
   private products: Product[] = [];
 
   insert(name: string, price: number) {
