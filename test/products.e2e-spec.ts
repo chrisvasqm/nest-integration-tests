@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
-import { ProductsModule } from './products.module';
+import { ProductsModule } from '../src/products/products.module';
 import { Server } from 'http';
 import * as request from 'supertest';
-import { Product } from './product.model';
+import { Product } from '../src/products/product.model';
 
 describe('ProductsService', () => {
   let app: INestApplication;
