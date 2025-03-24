@@ -30,6 +30,14 @@ describe('ProductsService', () => {
       expect(response.status).toBe(200);
       expect(response.body).toBeInstanceOf(Array);
     });
+
+    it('should return a product by ID', async () => {
+      const response = await request(server).get('/products/1');
+      const product = response.body as Product;
+
+      expect(response.status).toBe(200);
+      expect(product.id).toBe(1);
+    });
   });
 
   describe('POST /products', () => {
@@ -51,7 +59,7 @@ describe('ProductsService', () => {
 
       expect(getResponse.status).toBe(200);
       const products = getResponse.body as Array<Product>;
-      expect(products.length).toBe(1);
+      expect(products.length).toBe(2);
     });
   });
 });
